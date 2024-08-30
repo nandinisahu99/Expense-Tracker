@@ -8,7 +8,7 @@ export const ContextProvider=({children})=>{
     const [error,setError]=useState(null)
 
     const addIncome = (obj) => {
-        fetch("http://localhost:5000/user/add-income", {
+        fetch("https://expense-tracker-backend-jnzj.onrender.com/user/add-income", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ export const ContextProvider=({children})=>{
     };
 
     const getIncomes = () => {
-        fetch("http://localhost:5000/user/get-income")
+        fetch("https://expense-tracker-backend-jnzj.onrender.com/user/get-income")
         .then(res => {
             if (!res.ok) {
                 throw new Error('Network response was not ok');
@@ -44,7 +44,7 @@ export const ContextProvider=({children})=>{
     };
 
     const deleteIncome = (id) => {
-        fetch(`http://localhost:5000/user/delete-income/${id}`, {
+        fetch(`https://expense-tracker-backend-jnzj.onrender.com/user/delete-income/${id}`, {
             method: 'DELETE'
         })
         .then(res => {
@@ -69,7 +69,7 @@ export const ContextProvider=({children})=>{
 
     //calculate expenses
     const addExpense = (expense) => {
-        fetch("http://localhost:5000/user/add-expense", {
+        fetch("https://expense-tracker-backend-jnzj.onrender.com/user/add-expense", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ export const ContextProvider=({children})=>{
     };
 
     const getExpenses = () => {
-        fetch("http://localhost:5000/user/get-expense")
+        fetch("https://expense-tracker-backend-jnzj.onrender.com/user/get-expense")
         .then(res => {
             if (!res.ok) {
                 throw new Error('Network response was not ok');
@@ -105,7 +105,7 @@ export const ContextProvider=({children})=>{
     };
 
     const deleteExpense = (id) => {
-        fetch(`http://localhost:5000/user/delete-expense/${id}`, {
+        fetch(`https://expense-tracker-backend-jnzj.onrender.com/user/delete-expense/${id}`, {
             method: 'DELETE'
         })
         .then(res => {
