@@ -22,20 +22,20 @@ export default function Dashboard() {
                   <Chart/>
                   <div className="amount">
                     <div className="income">
-                      <h2>Total Income</h2>
+                      <h3>Total Income</h3>
                       <p>
                         {dollar} {totalIncome()}
                       </p>
                     </div>
                     <div className="expenses">
-                      <h2>Total Expenses</h2>
+                      <h3>Total Expenses</h3>
                       <p>
                         {dollar} {totalExpenses()}
                       </p>
                     </div>
                     <div className="balance">
-                      <h2>Total Balance</h2>
-                      <p>
+                      <h3>Total Balance</h3>
+                      <p style={{color: totalBalance()>0?"green":"red"}}>
                         {dollar} {totalBalance()}
                       </p>
                     </div>
@@ -46,19 +46,19 @@ export default function Dashboard() {
                   <h2 className='S-Title'>MIN <span>Expenses</span>MAX</h2>
                   <div className="salary">
                       <p>
-                        ${Math.min(...Expenses.map(item=>item.amount))}
+                        ₹{Math.min(...Expenses.map(item=>item.amount))}
                       </p>
                       <p>
-                        ${Math.max(...Expenses.map(item=>item.amount))}
+                        ₹{Math.max(...Expenses.map(item=>item.amount))}
                       </p>
                   </div>
                   <h2 className='S-Title'>MIN <span>Salary</span>MAX</h2>
                   <div className="salary">
                     <p>
-                      ${Math.min(...income.map(item=>item.amount))}
+                      ₹{Math.min(...income.map(item=>item.amount))}
                     </p>
                     <p>
-                      ${Math.max(...income.map(item=>item.amount))}
+                      ₹{Math.max(...income.map(item=>item.amount))}
                     </p>
                   </div>
               </div>
@@ -103,10 +103,10 @@ const DashboardStyle=styled.div`
                     justify-content: center;
                     align-items: center;
                     p{
-                        color: var(--color-green);
                         opacity: 0.6;
                         font-size: 2.5rem;
                     }
+                    margin-bottom: 30px;
                 }
             }
         }
@@ -121,8 +121,9 @@ const DashboardStyle=styled.div`
             }
             .S-Title{
                 font-size: 1.2rem;
+                margin-top:25px;
                 span{
-                    font-size: 1.8rem;
+                    font-size: 1.5rem;
                 }
             }
             .salary{

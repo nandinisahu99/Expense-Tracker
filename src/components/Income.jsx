@@ -4,6 +4,7 @@ import { InnerLayout } from '../styles/Layout';
 import { useGlobalContext } from '../context/ContextApi';
 import IncomeItem from './IncomeItem';
 import Form from './Form';
+import { dollar, money } from '../utils/Icons';
 
 export default function Income() {
     const {addIncome,getIncomes,income,deleteIncome,totalIncome}=useGlobalContext();
@@ -15,7 +16,7 @@ export default function Income() {
     <IncomeStyle>
         <InnerLayout>
             <h1>Incomes</h1>
-            <h2 className="total-income">Total Income: <span>${totalIncome()}</span></h2>
+            <h2 className="total-income">Total Income: <span>{dollar}{totalIncome()}</span></h2>
             <div className="income-content">
                 <div className="form-container">
                     <Form/>

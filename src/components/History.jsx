@@ -12,8 +12,8 @@ export default function History() {
             const {_id,title,amount,type}=item;
             return (
                 <div key={_id} className="item">
-                    <p style={{color: type === 'expense'?'red': 'blue'}}>{title}</p>
-                    <p style={{color: type === 'expense'? 'red':'blue'}}>
+                    <p style={{color: type === 'expense'?'red': 'green'}}>{title}</p>
+                    <p style={{color: type === 'expense'? 'red':'green'}}>
                         {type==='expense'? `-${amount <= 0? 0: amount}` : `+${amount<=0?0:amount}`}
                     </p>
                 </div>
@@ -30,7 +30,7 @@ const HistoryStyle=styled.div`
     .item{
         background: #FCF6F9;
         border: 2px solid #FFFFFF;
-        box-shadow: 0px 1px 15px rgba(0,0,0,0.66);
+        box-shadow: 0px 0px 3px rgba(0,0,0,0.66);
         padding: 1rem;
         border-radius: 20px;
         display: flex;

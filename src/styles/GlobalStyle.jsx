@@ -26,9 +26,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1, h2, h3, h4, h5, h6{
+        text-align:center;
         color: var(--primary-color);
+        padding-bottom: 10px
     }
-
+    p{
+        text-align:center;
+    }
     .error{
         color: red;
         animation: shake 0.5s ease-in-out;
